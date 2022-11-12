@@ -32,11 +32,11 @@ class _BooksListState extends State<BooksList> {
             return ListView.builder(
                 itemCount: snapshot.data?.length,
                 itemBuilder: (context, index) {
-                  Books student = snapshot.data![index];
+                  Books? student = snapshot.data?[index];
                   return snapshot.data?.length == null
                       ? CircularProgressIndicator()
                       : ListTile(
-                          title: Text(student.name),
+                          title: Text(student!.name),
                           trailing: Text(student.rollNo.toString()),
                           onTap: () {
                             setState(() {
